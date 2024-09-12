@@ -1,5 +1,5 @@
 body {
-  background: linear-gradient(135deg, #a8edea, #fed6e3);
+  background: linear-gradient(135deg, #9cd8db, #93a5cf);
   font-family: "Roboto", sans-serif;
 }
 
@@ -8,7 +8,7 @@ a {
 }
 
 .weather-app {
-  background: linear-gradient(135deg, #9cd8db, #93a5cf);
+  background: linear-gradient(135deg, #8a84e2, #84fab0);
   max-width: 600px;
   margin: 60px auto;
   padding: 30px;
