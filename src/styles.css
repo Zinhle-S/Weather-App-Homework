@@ -36,7 +36,7 @@ header {
 .search-button {
   margin-left: 3px;
   font-size: 16px;
-  background-color: #8A88E0;
+  background-color: #8a88e0;
   color: white;
   border: none;
   padding: 15px 30px;
@@ -89,6 +89,8 @@ main {
   font-size: 28px;
   margin-top: 6px;
 }
+
+
 
 footer {
   border-top: 1px solid #f9f7fe;

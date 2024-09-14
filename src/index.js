@@ -53,6 +53,30 @@ function searchSubmit(event) {
   searchCity(searchInputElement.value);
 }
 
+function displayForecast() {
+  let dayS = ["Tue", "Wed", "Thu", "Fri"];
+    let forecastHTML = ""
+
+    days.forEach(function (day){
+      forecastHTML = 
+      forecastHTML +
+      `
+      <div class="weather-forecast">
+          <div class="weather-forecast-day">
+            <div class="weather-forecast-date">${day}</div>
+            <div class="weather-forecast-icon">🌤</div>
+            <div class="weather-forecast-temperature">15° 9°</div>
+          </div>
+          </div>
+        <div class="weather-forecast" id="forecast"></div>
+      `;
+    });
+
+    let forecastElement = documenr.querySelector("forecast")
+    forecastElement.innerHTML = forecastHTML
+
+}
+
 function searchCity(city) {
   let apiKey = "b2a5adcct04b33178913oc335f405433";
   let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}&units=metric`;
