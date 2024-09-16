@@ -58,22 +58,24 @@ function displayForecast() {
     let forecastHTML = ""
 
     days.forEach(function (day){
-      forecastHTML = 
-      forecastHTML +
-      `
-      <div class="weather-forecast">
-          <div class="weather-forecast-day">
-            <div class="weather-forecast-date">${day}</div>
-            <div class="weather-forecast-icon">🌤</div>
-            <div class="weather-forecast-temperature">15° 9°</div>
+      forecastHtml =
+        forecastHtml +
+        `
+       <div class="weather-forecast-day">
+        <div class="weather-forecast-date">${day}</div>
+        <div class="weather-forecast-icon">🌤️</div>
+        <div class="weather-forecast-temperatures">
+          <div class="weather-forecast-temperature">
+            <strong>15º</strong>
           </div>
-          </div>
-        <div class="weather-forecast" id="forecast"></div>
+          <div class="weather-forecast-temperature">9º</div>
+        </div>
+      </div>
       `;
     });
 
-    let forecastElement = documenr.querySelector("forecast")
-    forecastElement.innerHTML = forecastHTML
+    let forecastElement = document.querySelector("#forecast")
+    forecastElement.innerHTML = forecastHtml
 
 }
 
@@ -88,3 +90,4 @@ let searchForm = document.querySelector("#search-form");
 searchForm.addEventListener("submit", searchSubmit);
 
 searchCity("Johannesburg");
+displayForecast();
