@@ -47,22 +47,17 @@ main {
   padding: 30px 0;
 }
 
-.current-temperature {
-  font-size: 48px;
-  display: flex;
-}
-
 .current-weather {
   display: flex;
   justify-content: space-between;
 }
 
 .current-city {
-  font-size: 38px;
-  font-weight: 900;
   margin: 0;
+  font-size: 38px;
   line-height: 48px;
 }
+
 .current-details {
   color: rgba(39, 33, 66, 0.4);
   font-size: 16px;
@@ -72,6 +67,11 @@ main {
 
 .current-details strong {
   color: #f65282;
+}
+
+.current-temperature {
+  font-size: 48px;
+  display: flex;
 }
 
 .current-temperature-icon {
