@@ -1,6 +1,6 @@
 function displayWeather(response) {
   let temperatureElement = document.querySelector("#temperature");
-  let temperature = Math.round(response.data.temperature.current);
+  let temperature = response.data.temperature.current;
   let cityNameElement = document.querySelector("#city-name");
   let descriptionElement = document.querySelector("#description");
   let humidityElement = document.querySelector("#humidity");
@@ -10,12 +10,12 @@ function displayWeather(response) {
   let date = new Date();
 
   cityNameElement.innerHTML = response.data.city;
-  dateTimeElement.innerHTML = formatDate(date);
+  dateTimeElement.innerHTML = formattedDate(date);
   descriptionElement.innerHTML = response.data.condition.description;
   humidityElement.innerHTML = `${response.data.temperature.humidity}%`;
   windSpeedElement.innerHTML = `${response.data.wind.speed}km/h`;
   temperatureElement.innerHTML = Math.round(temperature);
-  iconElement.innerHTML = `<img src="${response.data.condition.icon_url}" class="weather-app-icon" />`;
+  iconElement.innerHTML = `<img src="${response.data.condition.icon_url}" class="weather-icon" />`;
 
   getForecast(response.data.city);
 }
@@ -23,7 +23,7 @@ function displayWeather(response) {
 function formattedDate(date) {
   let minutes = date.getMinutes();
   let hours = date.getHours();
-  let days = [
+  let daysOfWeek = [
     "Sunday",
     "Monday",
     "Tuesday",
