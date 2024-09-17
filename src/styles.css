@@ -1,6 +1,7 @@
 body {
   background-image: url("https://images.pexels.com/photos/53594/blue-clouds-day-fluffy-53594.jpeg?auto=compress&cs=tinysrgb&w=600");
   background-repeat: no-repeat;
+  background-size: 100% 100%;
   font-family: "Roboto", sans-serif;
   font-weight: 500;
   font-style: normal;
@@ -8,8 +9,14 @@ body {
 }
 
 .weather-container {
-  background: rgb(71,65,193);
-  background: linear-gradient(90deg, rgba(71,65,193,1) 0%, rgba(88,86,227,1) 37%, rgba(84,204,227,1) 57%, rgba(0,212,255,1) 100%);
+  background: rgb(71, 65, 193);
+  background: linear-gradient(
+    90deg,
+    rgba(71, 65, 193, 1) 0%,
+    rgba(88, 86, 227, 1) 37%,
+    rgba(84, 204, 227, 1) 57%,
+    rgba(0, 212, 255, 1) 100%
+  );
   max-width: 650px;
   box-shadow: 0 20px 30px rgba(0, 0, 0, 0.5);
   border-radius: 20px;
