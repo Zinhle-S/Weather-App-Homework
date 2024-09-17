@@ -9,54 +9,53 @@
       href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
       rel="stylesheet"
     />
-    <script src="https://cdn.jsdelivr.net/npm/axios@1.1.2/dist/axios.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios@1.6.7/dist/axios.min.js"></script>
     <link rel="stylesheet" href="src/styles.css" />
-    <title>My weather application</title>
+    <title>My weather App</title>
   </head>
   <body>
-    <div class="weather-app">
+    <div class="weather-container">
       <header>
-        <form id="search-form">
+        <form id="search-form" id="search-form">
           <input
             type="search"
             placeholder="Enter a city.."
             required
-            class="search-input"
-            id="search-input"
+            class="search-form-input"
+            id="search-form-input"
+            
           />
           <input type="submit" value="Search" class="search-button" />
         </form>
       </header>
       <main>
-        <div class="current-weather">
-          <div>
-            <h1 class="current-city" id="current-city"></h1>
-            <p class="current-details">
-              <span id="current-date"></span>, 
-              <span id="description"></span> 
+        <div class="current-weather-container">
+          <div class="current-weather-info">
+            <h1 class="city-name" id="city-name"></h1>
+            <p>
+              <span class="date-time" id="date-time">Tuesday 14:49</span>,
+              <span class="description" id="description">scattered clouds</span>
               <br />
-              Humidity: <strong id="humidity"></strong>, Wind: 
-              <strong id="wind-speed"></strong>
+              Humidity: <span class="humidity" id="humidity">66%</span>, Wind:
+              <span class="wind-speed" id="wind-speed">3.13km/h</span>
             </p>
           </div>
-          <div class="current-temperature">
-            <div id="current-temperature-icon"></div>
-             <div class="current-temperature-value" id="current-temperature"
-              ></div>
-            <div class="current-temperature-unit">°C</div>
+          <div class="current-weather">
+            <div class="icon" id="icon">🌤️</div>
+            <div class="temperature" id="temperature"></div>
+            <div class="temperature-unit">°C</div>
           </div>
         </div>
         <div class="weather-forecast" id="forecast"></div>
       </main>
+
       <footer>
-        <p>
-          This project was coded by
+          Developed by
           <a href="https://github.com/Zinhle-S" target="_blank">Zinhle Simelane</a> and is
-          <a href="https://github.com/Zinhle-S/Weather-App-Homework" target="_blank"> on GitHub</a> and
+          <a href="https://github.com/Zinhle-S/Weather-App-Homework" target="_blank"> is open-sourced on GitHub</a> and
           <a href="https://teal-dango-b2dbcc.netlify.app/" target="_blank">hosted on Netlify</a>
-        </p>
       </footer>
     </div>
+     <script src="src/index.js"></script>
   </body>
-  <script src="src/index.js"></script>
 </html>

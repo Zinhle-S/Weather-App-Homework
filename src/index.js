@@ -1,27 +1,26 @@
-function displayTemperature(response) {
-  let temperatureElement = document.querySelector("#current-temperature");
+function displayWeather(response) {
+  let temperatureElement = document.querySelector("#temperature");
   let temperature = Math.round(response.data.temperature.current);
-  let cityElement = document.querySelector("#current-city");
+  let cityNameElement = document.querySelector("#city-name");
   let descriptionElement = document.querySelector("#description");
   let humidityElement = document.querySelector("#humidity");
   let windSpeedElement = document.querySelector("#wind-speed")
-  let currentDateElement = document.querySelector("#current-date");
-  let date = new Date(response.data.time * 1000);
-  let currentTemperatureIconElement = document.querySelector(
-    "#current-temperature-icon");
+  let dateTimeElement = document.querySelector("#date-time");
+  let iconElement = document.querySelector("#icon");
+  let date = new Date();
 
-  cityElement.innerHTML = response.data.city;
-  currentDateElement.innerHTML = formatDate(date);
+  cityNameElement.innerHTML = response.data.city;
+  dateTimeElement.innerHTML = formatDate(date);
   descriptionElement.innerHTML = response.data.condition.description;
   humidityElement.innerHTML = `${response.data.temperature.humidity}%`;
   windSpeedElement.innerHTML = `${response.data.wind.speed}km/h`;
   temperatureElement.innerHTML = Math.round(temperature);
-  currentTemperatureIconElement.innerHTML = `<img src="${response.data.condition.icon_url}" class="weather-app-icon" />`;
+  iconElement.innerHTML = `<img src="${response.data.condition.icon_url}" class="weather-app-icon" />`;
 
   getForecast(response.data.city);
 }
 
-function formatDate(date) {
+function formattedDate(date) {
   let minutes = date.getMinutes();
   let hours = date.getHours();
   let days = [
@@ -33,7 +32,7 @@ function formatDate(date) {
     "Friday",
     "Saturday",
   ];
-   let day = days[date.getDay()];
+   let day = daysOfWeek[date.getDay()];
 
   if (minutes < 10) {
     minutes = `0${minutes}`;
@@ -43,19 +42,19 @@ function formatDate(date) {
     hours = `0${hours}`;
   }
 
-  return `${formattedDay} ${hours}:${minutes}`;
+  return `${day} ${hours}:${minutes}`;
 }
 
 function searchCity(city) {
   let apiKey = "b903ef34a6bc399tdc9c0dd7o68d5647";
   let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}&units=metric`;
 
-  axios.get(apiUrl).then(displayTemperature);
+  axios.get(apiUrl).then(displayWeather);
 }
 
 function searchSubmit(event) {
   event.preventDefault();
-  let searchInputElement = document.querySelector("#search-input");
+  let searchInputElement = document.querySelector("#search-form-input");
   
   searchCity(searchInputElement.value);
 }
@@ -102,7 +101,7 @@ function displayForecast(response) {
 
 
     let forecastElement = document.querySelector("#forecast")
-    forecastElement.innerHTML = forecastHtml
+    forecastElement.innerHTML = forecastHtml;
  }
 
     let searchForm = document.querySelector("#search-form");
