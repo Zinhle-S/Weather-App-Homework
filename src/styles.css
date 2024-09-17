@@ -9,11 +9,11 @@ body {
 }
 
 .weather-container {
-  background: rgb(71, 65, 193);
+  background: rgb(60, 111, 221);
   background: linear-gradient(
     90deg,
-    rgba(71, 65, 193, 1) 0%,
-    rgba(88, 86, 227, 1) 37%,
+    rgba(60, 111, 221, 1) 0%,
+    rgba(88, 86, 227, 1) 0%,
     rgba(84, 204, 227, 1) 57%,
     rgba(0, 212, 255, 1) 100%
   );
